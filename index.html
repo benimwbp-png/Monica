@@ -130,11 +130,7 @@
   @media (max-width: 639px) {
     .about-section { min-height: 820px; }
     .about-img-wrap { height: 520px; }
-    /* Tighter collage on small screens */
-    .collage-wrap { min-height: 380px !important; }
-    .collage-wrap .collage-img { width: 72% !important; }
-    .collage-wrap .collage-card { width: 60% !important; padding: 1.25rem !important; }
-    .collage-wrap .collage-card .est-year { font-size: 56px !important; }
+    /* Collage simplifies to a single image on mobile (card hidden) — no overrides needed */
   }
 </style>
 </head>
@@ -401,16 +397,16 @@
 </section>
 
 <!-- ───────────────────────── 5 · FEATURED LISTINGS CAROUSEL 1 ───────────────────────── -->
-<section id="sprzedaz" class="bg-cream section-pad">
+<section id="wynajem" class="bg-cream section-pad">
   <div class="max-w-7xl mx-auto px-5 lg:px-10">
     <div class="flex flex-row items-start justify-between gap-4 lg:items-end mb-8 lg:mb-12">
       <div class="max-w-2xl">
-        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Wyróżnione oferty</p>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Oferty najmu</p>
         <h2 class="text-navy text-[30px] lg:text-[42px] leading-tight font-semibold tracking-tight">
-          Nieruchomości <em class="accent">warte uwagi</em>
+          Mieszkania <em class="accent">do wynajęcia</em>
         </h2>
         <p class="text-text-muted text-[15px] leading-relaxed mt-4">
-          Najlepsze propozycje z naszej bazy — apartamenty, domy i działki, które wybrali nasi doradcy.
+          Sprawdzone oferty wynajmu z różnych dzielnic Krakowa — od kawalerek po domy. Każda lokalizacja zweryfikowana osobiście.
         </p>
       </div>
       <div class="flex items-center gap-2 lg:gap-3 shrink-0" data-arrows="carousel-1">
@@ -425,22 +421,22 @@
 
     <div class="overflow-hidden" data-carousel="carousel-1">
       <div class="carousel-track flex">
-        <!-- 6 cards -->
+        <!-- 6 rental cards -->
         <!-- 1 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
           <div>
-            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Stare Miasto</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Apartament z widokiem na <span class="text-gold">Wawel</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 82 m² · 3 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Kamienica przy <span class="text-gold">Rynku</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 110 m² · 3 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">1 850 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">22 560 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">8 500 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">77 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -450,18 +446,18 @@
         <!-- 2 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
           <div>
-            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bielany</span>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Dom z ogrodem nad <span class="text-gold">Wisłą</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Dom · 230 m² · 5 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Apartament w sercu <span class="text-gold">Kazimierza</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 65 m² · 2 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">1 380 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">6 000 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">4 200 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">65 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -471,18 +467,18 @@
         <!-- 3 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
           <div>
-            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
               <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Podgórze</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Mieszkanie 2-pokojowe na <span class="text-gold">Podgórzu</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 48 m² · 2 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Mieszkanie z <span class="text-gold">balkonem</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 54 m² · 2 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">719 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">14 980 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">3 600 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">67 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -492,18 +488,18 @@
         <!-- 4 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
           <div>
-            <span class="inline-block bg-white/15 text-cream/80 text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Sprzedane</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Krowodrza</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Loft w <span class="text-gold">Starej Drukarni</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 95 m² · 2 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Apartament w nowej <span class="text-gold">inwestycji</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 65 m² · 3 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">1 690 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">17 790 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">4 800 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">74 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -513,18 +509,18 @@
         <!-- 5 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
           <div>
-            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
               <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bronowice</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Penthouse z <span class="text-gold">tarasem</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Apartament · 145 m² · 4 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Dom <span class="text-gold">jednorodzinny</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Dom · 180 m² · 5 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">2 450 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">16 900 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">9 200 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">51 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -534,18 +530,18 @@
         <!-- 6 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
           <div>
-            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
               <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Zwierzyniec</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Działka <span class="text-gold">inwestycyjna</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Działka · 850 m²</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Studio z <span class="text-gold">widokiem</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 32 m² · 1 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">950 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">1 118 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">2 800 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">88 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -560,16 +556,16 @@
 </section>
 
 <!-- ───────────────────────── 6 · FEATURED LISTINGS CAROUSEL 2 ───────────────────────── -->
-<section id="wynajem" class="bg-cream section-pad">
+<section id="sprzedaz" class="bg-cream section-pad">
   <div class="max-w-7xl mx-auto px-5 lg:px-10">
     <div class="flex flex-row items-start justify-between gap-4 lg:items-end mb-8 lg:mb-12">
       <div class="max-w-2xl">
-        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Świeże propozycje</p>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Oferty na sprzedaż</p>
         <h2 class="text-navy text-[30px] lg:text-[42px] leading-tight font-semibold tracking-tight">
-          Nieruchomości <em class="accent">warte uwagi</em>
+          Nieruchomości <em class="accent">na sprzedaż</em>
         </h2>
         <p class="text-text-muted text-[15px] leading-relaxed mt-4">
-          Mieszkania na sprzedaż i wynajem z różnych dzielnic Krakowa — wybrane osobiście.
+          Apartamenty, domy i działki z Krakowa i okolic — każda oferta zweryfikowana prawnie i technicznie przed wejściem do bazy.
         </p>
       </div>
       <div class="flex items-center gap-2 lg:gap-3 shrink-0" data-arrows="carousel-2">
@@ -584,21 +580,22 @@
 
     <div class="overflow-hidden" data-carousel="carousel-2">
       <div class="carousel-track flex">
-        <!-- 1 wynajem -->
+        <!-- 6 sale cards -->
+        <!-- 1 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
           <div>
-            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Stare Miasto</span>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Kamienica przy <span class="text-gold">Rynku</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 110 m² · 3 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Apartament z widokiem na <span class="text-gold">Wawel</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 82 m² · 3 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">8 500 zł/mies.</p>
-              <p class="text-cream/55 text-xs mt-1">—</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 850 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">22 560 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -611,15 +608,15 @@
             <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Krowodrza</span>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bielany</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Apartament w nowej <span class="text-gold">inwestycji</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 65 m² · 3 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Dom z ogrodem nad <span class="text-gold">Wisłą</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Dom · 230 m² · 5 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">985 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">15 150 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 380 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">6 000 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -632,15 +629,15 @@
             <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Nowa Huta</span>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bronowice</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Mieszkanie z <span class="text-gold">balkonem</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 54 m² · 2 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Penthouse z <span class="text-gold">tarasem</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Apartament · 145 m² · 4 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">649 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">12 020 zł/m²</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">2 450 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">16 900 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -650,18 +647,18 @@
         <!-- 4 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
           <div>
-            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
             <div class="flex items-center gap-2 mt-5 text-cream/85">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Podgórze</span>
             </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Studio w sercu <span class="text-gold">Kazimierza</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 32 m² · 1 pok.</p>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Loft postindustrialny <span class="text-gold">Fabryczna</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 120 m² · 3 pok.</p>
           </div>
           <div class="flex items-end justify-between mt-6">
             <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">3 200 zł/mies.</p>
-              <p class="text-cream/55 text-xs mt-1">—</p>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 980 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">16 500 zł/m²</p>
             </div>
             <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -669,6 +666,27 @@
           </div>
         </article>
         <!-- 5 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Zwierzyniec</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Działka <span class="text-gold">inwestycyjna</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Działka · 850 m²</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">950 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">1 118 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 6 -->
         <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
           <div>
             <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
@@ -689,27 +707,6 @@
             </button>
           </div>
         </article>
-        <!-- 6 -->
-        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
-          <div>
-            <span class="inline-block bg-white/15 text-cream/80 text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Sprzedane</span>
-            <div class="flex items-center gap-2 mt-5 text-cream/85">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Podgórze</span>
-            </div>
-            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Loft postindustrialny <span class="text-gold">Fabryczna</span></h3>
-            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 120 m² · 3 pok.</p>
-          </div>
-          <div class="flex items-end justify-between mt-6">
-            <div>
-              <p class="text-gold text-[22px] font-semibold tracking-tight">1 980 000 zł</p>
-              <p class="text-cream/55 text-xs mt-1">16 500 zł/m²</p>
-            </div>
-            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-          </div>
-        </article>
       </div>
     </div>
 
@@ -721,8 +718,8 @@
 <section id="zakup" class="bg-cream section-pad">
   <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
     <!-- Left collage -->
-    <div class="collage-wrap lg:col-span-5 relative min-h-[480px] lg:min-h-[560px]">
-      <div class="collage-img absolute left-0 top-0 w-[78%] aspect-[3/4] rounded-md overflow-hidden shadow-card -rotate-[3deg] origin-bottom-left">
+    <div class="lg:col-span-5">
+      <div class="w-full aspect-[4/3] lg:aspect-[4/5] rounded-md overflow-hidden shadow-card">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
           onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 800%22&gt;&lt;rect width=%22600%22 height=%22800%22 fill=%22%231A2A3F%22/&gt;&lt;text x=%22300%22 y=%22400%22 fill=%22%23C9A961%22 font-family=%22serif%22 font-size=%2236%22 font-style=%22italic%22 text-anchor=%22middle%22&gt;Krak%C3%B3w&lt;/text&gt;&lt;/svg&gt;';"
@@ -730,24 +727,15 @@
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="collage-card absolute right-0 bottom-0 w-[68%] aspect-[4/5] bg-navy rounded-md shadow-card rotate-[2deg] p-8 flex flex-col justify-between text-white">
-        <div>
-          <span class="inline-block w-2 h-2 rounded-full bg-gold mb-5"></span>
-          <p class="text-[11px] tracking-[0.32em] font-medium uppercase text-cream/80">Założone</p>
-        </div>
-        <p class="est-year font-serif-i text-gold text-[72px] lg:text-[88px] leading-none my-2">2020</p>
-        <p class="text-[11px] tracking-[0.32em] font-medium uppercase text-cream/80">Kraków · Małopolska</p>
-      </div>
     </div>
 
     <!-- Right copy -->
     <div class="lg:col-span-7">
-      <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">O agencji</p>
       <h2 class="text-navy text-[30px] lg:text-[42px] leading-[1.15] font-semibold tracking-tight max-w-xl">
         Pomagamy <em class="accent">sprzedać</em> nieruchomość, a nie tylko podpisać umowę.
       </h2>
       <p class="text-text-muted text-[15px] leading-relaxed mt-6 max-w-xl">
-        Na krakowskim rynku od 2020 roku. Ponad 100 przeprowadzonych transakcji — sprzedaż, zakup i wynajem mieszkań, domów oraz działek. Klienci doceniają mnie za konkretne i analityczne podejście na każdym etapie, dlatego pracuję głównie na poleceniach.
+        Skorzystaj z doświadczenia agenta z licencją PFRN i wsparcia topowej agencji w Krakowie. Każdą ofertę przygotowuję rzetelnie — wycena rynkowa, profesjonalna prezentacja, marketing i obsługa prawna prowadzą do podpisania aktu w najkorzystniejszych dla Ciebie warunkach.
       </p>
 
       <p class="font-medium text-navy mt-8 text-[16px]">Jeśli chcesz sprzedać — oto co dostajesz ode mnie:</p>
@@ -784,7 +772,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
         <a href="#o-mnie" class="press inline-flex items-center gap-2 bg-transparent border border-navy text-navy hover:bg-navy hover:text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-7 py-3 transition-colors">
-          Poznaj zespół
+          Poznaj mnie
         </a>
       </div>
     </div>
