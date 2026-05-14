@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sebastian Monica — Agent nieruchomości w Krakowie</title>
+<meta name="description" content="Sebastian Monica — agent nieruchomości w Krakowie z licencją PFRN nr 28574. Sprzedaż, wynajem i zakup mieszkań, domów i działek. Ponad 100 transakcji od 2020 roku." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#0B1727',
+          'navy-deep': '#070F1B',
+          gold: '#C9A961',
+          'gold-soft': '#E0C387',
+          cream: '#F5F1EA',
+          'cream-warm': '#EDE6D8',
+          'text-dark': '#1A1A1A',
+          'text-muted': '#5A5A5A',
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        },
+        boxShadow: {
+          card: '0 10px 40px -12px rgba(11, 23, 39, 0.18)',
+          search: '0 24px 60px -20px rgba(11, 23, 39, 0.18)',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; background:#F5F1EA; color:#1A1A1A; }
+  .font-serif-i { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; }
+  em.accent { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: #C9A961; font-weight: 600; }
+
+  /* Custom select chevron */
+  .gold-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23C9A961' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 14px 14px;
+    padding-right: 2.5rem;
+  }
+
+  /* Nav underline animation */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px;
+    background: #C9A961; transform: scaleX(0); transform-origin: left center;
+    transition: transform .35s ease;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  /* Card subtle gold tint border */
+  .card-tint { border: 1px solid rgba(201,169,97,0.15); }
+  .card-tint:hover { border-color: rgba(201,169,97,0.35); }
+
+  /* Carousel track */
+  .carousel-track { transition: transform .55s cubic-bezier(.22,.61,.36,1); }
+
+  /* Hero radial / gradient overlay */
+  .hero-overlay {
+    background: linear-gradient(90deg, #0B1727 0%, #0B1727 38%, rgba(11,23,39,0.75) 55%, rgba(11,23,39,0) 100%);
+  }
+
+  /* Section marker slash */
+  .marker-slash { color: #C9A961; font-weight: 500; }
+
+  /* Modal */
+  dialog.contact-modal { background: transparent; padding: 0; border: 0; }
+  dialog.contact-modal::backdrop { background: rgba(11,23,39,0.72); backdrop-filter: blur(6px); }
+
+  /* Subtle ring on focus */
+  .focus-gold:focus { outline: none; box-shadow: 0 0 0 2px rgba(201,169,97,0.45); border-color: #C9A961; }
+
+  /* Hamburger overlay */
+  #mobile-menu { transition: opacity .25s ease; }
+
+  /* Hide scrollbars on overflow track */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Soft texture for hero — barely visible diagonal lines */
+  .hero-tex {
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba(201,169,97,0.08), transparent 55%),
+      radial-gradient(circle at 65% 90%, rgba(201,169,97,0.06), transparent 60%);
+  }
+
+  /* Ornamental divider */
+  .ornament { display: inline-flex; align-items: center; gap: 10px; }
+  .ornament::before, .ornament::after { content:''; height:1px; width:36px; background:#C9A961; opacity:.55; }
+
+  /* Tiny scale on press */
+  .press:active { transform: scale(0.985); }
+
+  /* Header transition */
+  header#site-header { transition: background-color .35s ease, box-shadow .35s ease, border-color .35s ease; }
+
+  /* Unified section padding (35px top/bottom) */
+  .section-pad { padding-top: 35px; padding-bottom: 35px; }
+  /* Hero gets a bit more top padding so content clears the fixed header */
+  .hero-pad { padding-top: 96px; padding-bottom: 35px; }
+  @media (min-width: 1024px) {
+    .hero-pad { padding-top: 112px; padding-bottom: 35px; }
+  }
+
+  /* Desktop default for section 8 image (cover with top anchor) */
+  .about-img { object-fit: cover; object-position: 50% top; }
+
+  /* Mobile-only refinements */
+  @media (max-width: 1023px) {
+    /* Hero portrait — center and constrain on mobile so it doesn't overpower copy */
+    .hero-portrait { max-width: 260px; margin: 28px auto 0; }
+    /* Section 8 — whole person visible at top; copy gets clean navy zone below */
+    .about-section { min-height: 880px; }
+    .about-img-wrap { inset: 0 0 auto 0; height: 580px; width: 100%; }
+    .about-img { object-fit: contain; object-position: 50% top; background: #0B1727; }
+    .about-overlay { background: transparent !important; background-image: none !important; }
+  }
+  @media (max-width: 639px) {
+    .about-section { min-height: 820px; }
+    .about-img-wrap { height: 520px; }
+    /* Tighter collage on small screens */
+    .collage-wrap { min-height: 380px !important; }
+    .collage-wrap .collage-img { width: 72% !important; }
+    .collage-wrap .collage-card { width: 60% !important; padding: 1.25rem !important; }
+    .collage-wrap .collage-card .est-year { font-size: 56px !important; }
+  }
+</style>
+</head>
+<body class="bg-cream text-text-dark">
+
+<!-- ───────────────────────── 1 · TOP NAVIGATION ───────────────────────── -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-40 border-b border-transparent">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
+    <a href="#top" class="flex flex-col leading-tight">
+      <span class="text-white font-semibold tracking-[0.18em] text-[15px] lg:text-base">SEBASTIAN&nbsp;MONICA</span>
+      <span class="font-serif-i text-gold text-[12px] lg:text-[13px] mt-0.5">Agent nieruchomości</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9">
+      <a href="#wynajem"  class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">Wynajem</a>
+      <a href="#sprzedaz" class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">Sprzedaż</a>
+      <a href="#zakup"    class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">Zakup</a>
+      <a href="#o-mnie"   class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">O&nbsp;mnie</a>
+      <button data-open-contact class="press inline-flex items-center gap-2 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-6 py-2.5 transition-colors">
+        Kontakt
+      </button>
+    </nav>
+
+    <button id="hamburger" class="lg:hidden text-gold p-2" aria-label="Otwórz menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-navy/95 backdrop-blur-sm opacity-0 pointer-events-none flex flex-col">
+  <div class="flex items-center justify-between px-5 h-16 border-b border-white/10">
+    <span class="text-white font-semibold tracking-[0.18em] text-[15px]">SEBASTIAN&nbsp;MONICA</span>
+    <button id="hamburger-close" class="text-gold p-2" aria-label="Zamknij menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="flex-1 flex flex-col items-center justify-center gap-7">
+    <a href="#wynajem"  class="text-white text-lg tracking-[0.2em] uppercase font-medium">Wynajem</a>
+    <a href="#sprzedaz" class="text-white text-lg tracking-[0.2em] uppercase font-medium">Sprzedaż</a>
+    <a href="#zakup"    class="text-white text-lg tracking-[0.2em] uppercase font-medium">Zakup</a>
+    <a href="#o-mnie"   class="text-white text-lg tracking-[0.2em] uppercase font-medium">O&nbsp;mnie</a>
+    <button data-open-contact class="mt-4 bg-gold text-white font-semibold tracking-[0.16em] text-sm uppercase rounded-full px-8 py-3">Kontakt</button>
+  </nav>
+</div>
+
+<main id="top">
+
+<!-- ───────────────────────── 2 · HERO ───────────────────────── -->
+<section class="relative bg-navy text-white hero-pad overflow-hidden hero-tex">
+  <!-- Skyline (full-bleed) -->
+  <div class="absolute inset-0 pointer-events-none select-none">
+    <img
+      src="171589404.webp"
+      onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1600 1000%22&gt;&lt;rect width=%221600%22 height=%221000%22 fill=%22%230B1727%22/&gt;&lt;text x=%22800%22 y=%22500%22 fill=%22%23C9A961%22 font-family=%22serif%22 font-size=%2248%22 font-style=%22italic%22 text-anchor=%22middle%22&gt;Krak%C3%B3w%20skyline&lt;/text&gt;&lt;/svg&gt;';"
+      alt="Wawel o zachodzie słońca — panorama Krakowa znad Wisły"
+      class="w-full h-full object-cover object-center opacity-80"
+    />
+    <!-- Left-side navy gradient for copy legibility on desktop; full-cover dim on mobile -->
+    <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30 lg:via-navy/75 lg:to-transparent"></div>
+    <!-- Bottom navy fade to merge with next section -->
+    <div class="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-navy/40"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+    <!-- Left copy -->
+    <div class="lg:col-span-7 z-10">
+      <p class="text-gold text-[11px] tracking-[0.32em] font-medium uppercase mb-6 ornament">Agencja nieruchomości w Krakowie</p>
+      <h1 class="font-semibold leading-[1.02] text-[44px] sm:text-[56px] lg:text-[68px] tracking-tight">
+        Sebastian<br/>Monica
+      </h1>
+      <p class="font-serif-i text-gold text-[26px] sm:text-[30px] lg:text-[34px] mt-3 leading-snug">
+        Skuteczny Agent Nieruchomości
+      </p>
+      <p class="text-cream/85 text-[15px] lg:text-[16px] leading-relaxed max-w-xl mt-7">
+        Jestem ekspertem w branży nieruchomości z licencją PFRN nr 28574. Głęboko wierzę, że klienci potrzebują w przypadku sprzedaży lub zakupu przede wszystkim wsparcia i pewności przeprowadzonej transakcji.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-9">
+        <a href="#sprzedaz" class="press inline-flex items-center gap-2 bg-navy-deep border border-gold/60 text-gold text-[11px] tracking-[0.24em] font-medium uppercase rounded-full px-5 py-2.5 hover:bg-gold hover:text-white transition-colors">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Sprzedaje
+        </a>
+        <a href="#wynajem" class="press inline-flex items-center gap-2 bg-navy-deep border border-gold/60 text-gold text-[11px] tracking-[0.24em] font-medium uppercase rounded-full px-5 py-2.5 hover:bg-gold hover:text-white transition-colors">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Wynajmuje
+        </a>
+      </div>
+    </div>
+
+    <!-- Right portrait -->
+    <div class="lg:col-span-5 z-10 relative">
+      <div class="hero-portrait relative aspect-[7/12] max-w-sm ml-auto">
+        <img
+          src="Sebastian-Monica-3.png"
+          onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 800%22&gt;&lt;rect width=%22600%22 height=%22800%22 fill=%22%230B1727%22/&gt;&lt;text x=%22300%22 y=%22400%22 fill=%22%23C9A961%22 font-family=%22serif%22 font-size=%2236%22 font-style=%22italic%22 text-anchor=%22middle%22&gt;Sebastian Monica&lt;/text&gt;&lt;/svg&gt;';"
+          alt="Sebastian Monica — agent nieruchomości w Krakowie"
+          class="w-full h-full object-contain object-bottom rounded-sm shadow-2xl"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom edge fade into the cream section -->
+  <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-b from-transparent to-navy"></div>
+</section>
+
+<!-- ───────────────────────── 3 · GOOGLE REVIEWS WIDGET PLACEHOLDER ───────────────────────── -->
+<section class="bg-cream section-pad">
+  <!-- Google Reviews widget embed — to be wired via WordPress plugin backend.
+       Replace this entire <div data-google-reviews-placeholder> block with the
+       plugin's shortcode/embed output. -->
+  <div data-google-reviews-placeholder class="max-w-6xl mx-auto px-5 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center min-w-0">
+
+      <!-- Left: Google badge -->
+      <div class="min-w-0 lg:col-span-5 text-center lg:text-left">
+        <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-5">
+          <svg width="48" height="48" viewBox="0 0 48 48" aria-label="Google" role="img" class="shrink-0">
+            <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.3l7.9 6.2C12.4 13.7 17.7 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.5 2.9-2.2 5.4-4.7 7.1l7.3 5.6c4.3-4 6.7-9.9 6.7-16.7z"/>
+            <path fill="#FBBC05" d="M10.5 28.5c-.5-1.5-.8-3.1-.8-4.5s.3-3 .8-4.5l-7.9-6.2C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.7l7.9-6.2z"/>
+            <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.3-5.6c-2 1.4-4.6 2.2-8.6 2.2-6.3 0-11.6-4.2-13.5-10l-7.9 6.2C6.5 42.6 14.6 48 24 48z"/>
+          </svg>
+          <span class="font-bold text-navy text-[48px] sm:text-[56px] lg:text-[64px] leading-none tracking-tight">4.9</span>
+          <div class="flex gap-1">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+          </div>
+        </div>
+        <div class="mt-4">
+          <p class="text-navy text-[12px] tracking-[0.28em] font-medium uppercase">Opinie klientów w Google</p>
+          <p class="text-text-muted text-sm mt-2">Na podstawie opinii klientów</p>
+        </div>
+      </div>
+
+      <!-- Right: testimonials carousel -->
+      <div class="min-w-0 lg:col-span-7 relative">
+      <div class="overflow-hidden" data-carousel="reviews">
+        <div class="carousel-track flex">
+      <article class="bg-white rounded-lg p-6 shadow-card shrink-0 text-left">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-semibold flex items-center justify-center text-sm">GG</div>
+          <div>
+            <p class="font-medium text-navy text-sm">Gabriela Gurbiel</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            </div>
+          </div>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">Wszystko sprawnie, kontakt bezproblemowy. Pełen profesjonalizm.</p>
+      </article>
+
+      <article class="bg-white rounded-lg p-6 shadow-card shrink-0 text-left">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-semibold flex items-center justify-center text-sm">MZ</div>
+          <div>
+            <p class="font-medium text-navy text-sm">Małgorzata Zajęcka</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            </div>
+          </div>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">Pan Sebastian Monica jest jednym z nielicznych agentów, którzy potrafią przedstawić dobre i złe strony.</p>
+      </article>
+
+      <article class="bg-white rounded-lg p-6 shadow-card shrink-0 text-left">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-semibold flex items-center justify-center text-sm">KP</div>
+          <div>
+            <p class="font-medium text-navy text-sm">Krzysztof Peroń</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            </div>
+          </div>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">Jest to osoba znająca się na swojej pracy, cierpliwa i pomocna.</p>
+      </article>
+
+      <article class="bg-white rounded-lg p-6 shadow-card shrink-0 text-left">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-semibold flex items-center justify-center text-sm">OS</div>
+          <div>
+            <p class="font-medium text-navy text-sm">Oksana Serebrova-Malinina</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            </div>
+          </div>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">Zaangażowany, chętny do wyjaśnień i udzielania wskazówek.</p>
+      </article>
+
+      <article class="bg-white rounded-lg p-6 shadow-card shrink-0 text-left">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 text-gold font-semibold flex items-center justify-center text-sm">IU</div>
+          <div>
+            <p class="font-medium text-navy text-sm">Igor Umrikhin</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+              <svg class="w-3 h-3 text-gold fill-current" viewBox="0 0 20 20"><path d="M10 15.27l-5.18 3.04 1.4-5.86L1.6 7.95l5.94-.51L10 2l2.46 5.44 5.94.51-4.62 4.5 1.4 5.86z"/></svg>
+            </div>
+          </div>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">Byłem bardzo zadowolony ze współpracy z nim i polecam.</p>
+      </article>
+        </div>
+      </div>
+      <div class="flex justify-center lg:justify-start gap-2.5 mt-8" data-dots="reviews"></div>
+      </div>
+    </div>
+  </div>
+  <!-- /Google Reviews widget embed -->
+</section>
+
+<!-- ───────────────────────── 4 · PROPERTY SEARCH ───────────────────────── -->
+<section id="search" class="bg-cream section-pad">
+  <div class="max-w-5xl mx-auto px-5 lg:px-10 text-center">
+    <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-5"><span class="marker-slash">/</span>&nbsp; Znajdź nieruchomość</p>
+    <h2 class="text-navy text-[30px] lg:text-[40px] leading-tight font-semibold tracking-tight max-w-2xl mx-auto">
+      Twoja kolejna nieruchomość <em class="accent">w Krakowie</em>
+    </h2>
+    <p class="text-text-muted text-[15px] leading-relaxed max-w-xl mx-auto mt-5">
+      Znajdź idealną nieruchomość dzięki naszemu zaawansowanemu narzędziu wyszukiwania. Nasza oferta obejmuje starannie wyselekcjonowane nieruchomości premium.
+    </p>
+
+    <form id="search-form" class="mt-10 bg-white rounded-lg shadow-search p-5 lg:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3">
+      <select required class="gold-select focus-gold col-span-1 lg:col-span-3 bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark">
+        <option value="" disabled selected>Wybierz rodzaj oferty</option>
+        <option>Sprzedaż</option><option>Wynajem</option><option>Zakup</option>
+      </select>
+      <select required class="gold-select focus-gold col-span-1 lg:col-span-3 bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark">
+        <option value="" disabled selected>Wybierz typ nieruchomości</option>
+        <option>Mieszkanie</option><option>Dom</option><option>Apartament</option><option>Działka</option><option>Lokal użytkowy</option>
+      </select>
+      <select required class="gold-select focus-gold col-span-1 lg:col-span-3 bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark">
+        <option value="" disabled selected>Wybierz lokalizację</option>
+        <option>Stare Miasto</option><option>Kazimierz</option><option>Podgórze</option><option>Bronowice</option><option>Zwierzyniec</option><option>Krowodrza</option><option>Nowa Huta</option><option>Okolice Krakowa</option>
+      </select>
+      <button type="submit" class="press col-span-1 lg:col-span-3 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.18em] text-[12px] uppercase rounded-md px-6 py-3 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Szukaj
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ───────────────────────── 5 · FEATURED LISTINGS CAROUSEL 1 ───────────────────────── -->
+<section id="sprzedaz" class="bg-cream section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="flex flex-row items-start justify-between gap-4 lg:items-end mb-8 lg:mb-12">
+      <div class="max-w-2xl">
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Wyróżnione oferty</p>
+        <h2 class="text-navy text-[30px] lg:text-[42px] leading-tight font-semibold tracking-tight">
+          Nieruchomości <em class="accent">warte uwagi</em>
+        </h2>
+        <p class="text-text-muted text-[15px] leading-relaxed mt-4">
+          Najlepsze propozycje z naszej bazy — apartamenty, domy i działki, które wybrali nasi doradcy.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 lg:gap-3 shrink-0" data-arrows="carousel-1">
+        <button class="press w-11 h-11 rounded-full border border-gold/60 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-colors" aria-label="Poprzedni" data-dir="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="press w-11 h-11 rounded-full border border-gold/60 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-colors" aria-label="Następny" data-dir="1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="overflow-hidden" data-carousel="carousel-1">
+      <div class="carousel-track flex">
+        <!-- 6 cards -->
+        <!-- 1 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Apartament z widokiem na <span class="text-gold">Wawel</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 82 m² · 3 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 850 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">22 560 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bielany</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Dom z ogrodem nad <span class="text-gold">Wisłą</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Dom · 230 m² · 5 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 380 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">6 000 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 3 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Podgórze</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Mieszkanie 2-pokojowe na <span class="text-gold">Podgórzu</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 48 m² · 2 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">719 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">14 980 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 4 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
+          <div>
+            <span class="inline-block bg-white/15 text-cream/80 text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Sprzedane</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Loft w <span class="text-gold">Starej Drukarni</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 95 m² · 2 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 690 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">17 790 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 5 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bronowice</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Penthouse z <span class="text-gold">tarasem</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Apartament · 145 m² · 4 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">2 450 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">16 900 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 6 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5 transition-colors">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Zwierzyniec</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Działka <span class="text-gold">inwestycyjna</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Działka · 850 m²</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">950 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">1 118 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center transition-colors" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-2.5 mt-10" data-dots="carousel-1"></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 6 · FEATURED LISTINGS CAROUSEL 2 ───────────────────────── -->
+<section id="wynajem" class="bg-cream section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="flex flex-row items-start justify-between gap-4 lg:items-end mb-8 lg:mb-12">
+      <div class="max-w-2xl">
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Świeże propozycje</p>
+        <h2 class="text-navy text-[30px] lg:text-[42px] leading-tight font-semibold tracking-tight">
+          Nieruchomości <em class="accent">warte uwagi</em>
+        </h2>
+        <p class="text-text-muted text-[15px] leading-relaxed mt-4">
+          Mieszkania na sprzedaż i wynajem z różnych dzielnic Krakowa — wybrane osobiście.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 lg:gap-3 shrink-0" data-arrows="carousel-2">
+        <button class="press w-11 h-11 rounded-full border border-gold/60 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-colors" aria-label="Poprzedni" data-dir="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="press w-11 h-11 rounded-full border border-gold/60 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-colors" aria-label="Następny" data-dir="1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="overflow-hidden" data-carousel="carousel-2">
+      <div class="carousel-track flex">
+        <!-- 1 wynajem -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Stare Miasto</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Kamienica przy <span class="text-gold">Rynku</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 110 m² · 3 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">8 500 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">—</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Krowodrza</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Apartament w nowej <span class="text-gold">inwestycji</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 65 m² · 3 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">985 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">15 150 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 3 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Nowa Huta</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Mieszkanie z <span class="text-gold">balkonem</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 54 m² · 2 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">649 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">12 020 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 4 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Wynajem</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Kazimierz</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Studio w sercu <span class="text-gold">Kazimierza</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 32 m² · 1 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">3 200 zł/mies.</p>
+              <p class="text-cream/55 text-xs mt-1">—</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 5 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
+          <div>
+            <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Okolice Krakowa, Zielonki</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Dom z <span class="text-gold">ogrodem</span> 450 m²</h3>
+            <p class="text-cream/70 text-sm mt-3">Dom · 180 m² · 5 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 590 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">8 830 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+        <!-- 6 -->
+        <article class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] shrink-0 mr-5">
+          <div>
+            <span class="inline-block bg-white/15 text-cream/80 text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Sprzedane</span>
+            <div class="flex items-center gap-2 mt-5 text-cream/85">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Podgórze</span>
+            </div>
+            <h3 class="font-serif-i text-[24px] lg:text-[26px] text-white leading-snug mt-3">Loft postindustrialny <span class="text-gold">Fabryczna</span></h3>
+            <p class="text-cream/70 text-sm mt-3">Mieszkanie · 120 m² · 3 pok.</p>
+          </div>
+          <div class="flex items-end justify-between mt-6">
+            <div>
+              <p class="text-gold text-[22px] font-semibold tracking-tight">1 980 000 zł</p>
+              <p class="text-cream/55 text-xs mt-1">16 500 zł/m²</p>
+            </div>
+            <button class="press w-10 h-10 rounded-full bg-gold hover:bg-gold-soft text-white flex items-center justify-center" aria-label="Szczegóły oferty">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-2.5 mt-10" data-dots="carousel-2"></div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 7 · SELL-SIDE PITCH ───────────────────────── -->
+<section id="zakup" class="bg-cream section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+    <!-- Left collage -->
+    <div class="collage-wrap lg:col-span-5 relative min-h-[480px] lg:min-h-[560px]">
+      <div class="collage-img absolute left-0 top-0 w-[78%] aspect-[3/4] rounded-md overflow-hidden shadow-card -rotate-[3deg] origin-bottom-left">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+          onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 800%22&gt;&lt;rect width=%22600%22 height=%22800%22 fill=%22%231A2A3F%22/&gt;&lt;text x=%22300%22 y=%22400%22 fill=%22%23C9A961%22 font-family=%22serif%22 font-size=%2236%22 font-style=%22italic%22 text-anchor=%22middle%22&gt;Krak%C3%B3w&lt;/text&gt;&lt;/svg&gt;';"
+          alt="Nowoczesna nieruchomość w Krakowie"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="collage-card absolute right-0 bottom-0 w-[68%] aspect-[4/5] bg-navy rounded-md shadow-card rotate-[2deg] p-8 flex flex-col justify-between text-white">
+        <div>
+          <span class="inline-block w-2 h-2 rounded-full bg-gold mb-5"></span>
+          <p class="text-[11px] tracking-[0.32em] font-medium uppercase text-cream/80">Założone</p>
+        </div>
+        <p class="est-year font-serif-i text-gold text-[72px] lg:text-[88px] leading-none my-2">2020</p>
+        <p class="text-[11px] tracking-[0.32em] font-medium uppercase text-cream/80">Kraków · Małopolska</p>
+      </div>
+    </div>
+
+    <!-- Right copy -->
+    <div class="lg:col-span-7">
+      <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">O agencji</p>
+      <h2 class="text-navy text-[30px] lg:text-[42px] leading-[1.15] font-semibold tracking-tight max-w-xl">
+        Pomagamy <em class="accent">sprzedać</em> nieruchomość, a nie tylko podpisać umowę.
+      </h2>
+      <p class="text-text-muted text-[15px] leading-relaxed mt-6 max-w-xl">
+        Na krakowskim rynku od 2020 roku. Ponad 100 przeprowadzonych transakcji — sprzedaż, zakup i wynajem mieszkań, domów oraz działek. Klienci doceniają mnie za konkretne i analityczne podejście na każdym etapie, dlatego pracuję głównie na poleceniach.
+      </p>
+
+      <p class="font-medium text-navy mt-8 text-[16px]">Jeśli chcesz sprzedać — oto co dostajesz ode mnie:</p>
+      <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-4 mt-6 max-w-xl">
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 w-5 h-5 rounded-full border border-gold flex items-center justify-center shrink-0">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span class="text-navy text-sm font-medium leading-snug">Wycena rynkowa w 48 godzin</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 w-5 h-5 rounded-full border border-gold flex items-center justify-center shrink-0">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span class="text-navy text-sm font-medium leading-snug">Profesjonalna sesja foto i wirtualny spacer 3D</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 w-5 h-5 rounded-full border border-gold flex items-center justify-center shrink-0">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span class="text-navy text-sm font-medium leading-snug">Marketing na wszystkich portalach + Google Ads</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 w-5 h-5 rounded-full border border-gold flex items-center justify-center shrink-0">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span class="text-navy text-sm font-medium leading-snug">Pełna obsługa prawna i notarialna</span>
+        </li>
+      </ul>
+
+      <div class="flex flex-wrap gap-3 mt-10">
+        <button data-open-contact data-subject="Sprzedaż nieruchomości" class="press inline-flex items-center gap-2 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-7 py-3 transition-colors">
+          Zgłoś nieruchomość
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <a href="#o-mnie" class="press inline-flex items-center gap-2 bg-transparent border border-navy text-navy hover:bg-navy hover:text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-7 py-3 transition-colors">
+          Poznaj zespół
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 8 · O MNIE — SEBASTIAN MONICA ───────────────────────── -->
+<section id="o-mnie" class="bg-navy text-white section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid grid-cols-5 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-12 items-center">
+    <!-- Portrait (subject mirrored so gaze leads into copy on right) -->
+    <div class="col-span-2 lg:col-span-5">
+      <img
+        src="Sebastian-Monica-3.png"
+        alt="Sebastian Monica — agent nieruchomości w Krakowie"
+        class="w-full h-auto block"
+        style="transform: scaleX(-1);"
+      />
+    </div>
+    <!-- Copy -->
+    <div class="col-span-3 lg:col-span-7">
+      <p class="text-[11px] sm:text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-3 sm:mb-5">O mnie</p>
+      <h2 class="text-white text-[22px] sm:text-[28px] lg:text-[36px] font-semibold tracking-tight leading-tight">Sebastian Monica</h2>
+      <p class="font-serif-i text-gold text-[15px] sm:text-[18px] lg:text-[22px] mt-1">Agent nieruchomości · Kraków</p>
+      <ul class="mt-4 sm:mt-6 space-y-2 sm:space-y-2.5 text-cream/85 text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed">
+        <li>Na krakowskim rynku od 2020 roku</li>
+        <li>Ponad 100 przeprowadzonych transakcji</li>
+        <li>Licencja PFRN nr 28574</li>
+        <li>Pracuję głównie na poleceniach klientów</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 9 · FOOTER ───────────────────────── -->
+<footer class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-10 lg:py-16 grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-10">
+    <!-- Col 1 -->
+    <div class="md:col-span-6 lg:col-span-5">
+      <div class="flex items-center gap-3 mt-1">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/30 text-white hover:border-gold hover:text-gold transition-colors flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.5-2 2-2h2V2h-3c-3 0-5 1.8-5 5v3H6v4h3v8h4z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/30 text-white hover:border-gold hover:text-gold transition-colors flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/30 text-white hover:border-gold hover:text-gold transition-colors flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zM4 9h4v11H4zM10 9h4v1.7c.7-1 1.9-2 3.7-2 3 0 4.3 2 4.3 5V20h-4v-5.5c0-1.7-.6-2.5-2-2.5s-2 .9-2 2.5V20h-4V9z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Col 2 -->
+    <div class="md:col-span-2 lg:col-span-2">
+      <p class="text-gold text-[11px] tracking-[0.28em] font-medium uppercase mb-5">Nawigacja</p>
+      <ul class="space-y-3 text-white/85 text-sm">
+        <li><a href="#wynajem"  class="hover:text-gold transition-colors">Wynajem</a></li>
+        <li><a href="#sprzedaz" class="hover:text-gold transition-colors">Sprzedaż</a></li>
+        <li><a href="#zakup"    class="hover:text-gold transition-colors">Zakup</a></li>
+        <li><a href="#o-mnie"   class="hover:text-gold transition-colors">O mnie</a></li>
+        <li><button data-open-contact class="hover:text-gold transition-colors">Kontakt</button></li>
+      </ul>
+    </div>
+
+    <!-- Col 3 -->
+    <div class="md:col-span-2 lg:col-span-2">
+      <p class="text-gold text-[11px] tracking-[0.28em] font-medium uppercase mb-5">Lokalizacje</p>
+      <ul class="space-y-3 text-white/85 text-sm">
+        <li>Stare Miasto</li>
+        <li>Kazimierz</li>
+        <li>Podgórze</li>
+        <li>Bronowice</li>
+        <li>Zwierzyniec</li>
+        <li>Krowodrza</li>
+        <li>Okolice Krakowa</li>
+      </ul>
+    </div>
+
+    <!-- Col 4 -->
+    <div class="md:col-span-2 lg:col-span-3">
+      <p class="text-gold text-[11px] tracking-[0.28em] font-medium uppercase mb-5">Kontakt</p>
+      <ul class="space-y-3 text-sm">
+        <li><a href="tel:+48692841661" class="text-gold hover:text-gold-soft font-medium">+48 692 841 661</a></li>
+        <li><a href="mailto:kontakt@sebastianmonica.pl" class="text-white/85 hover:text-gold transition-colors">kontakt@sebastianmonica.pl</a></li>
+        <li class="text-white/85 leading-relaxed">ul. [placeholder]<br/>31-000 Kraków</li>
+        <li class="text-white/55 text-xs pt-2">Licencja PFRN nr 28574</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gold/15">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-white/60">
+      <p>© 2026 Sebastian Monica · Wszelkie prawa zastrzeżone</p>
+      <p class="flex flex-wrap gap-x-5 gap-y-1">
+        <a href="#" class="hover:text-gold transition-colors">Polityka prywatności</a>
+        <span>Realizacja: [placeholder]</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<!-- ───────────────────────── 10 · CONTACT MODAL ───────────────────────── -->
+<dialog id="contact-modal" class="contact-modal max-w-[92vw]">
+  <div class="bg-cream rounded-lg shadow-2xl border border-gold-soft/60 p-7 sm:p-10 w-[520px] max-w-full relative">
+    <button id="contact-close" class="absolute top-4 right-4 text-navy hover:text-gold transition-colors p-1.5" aria-label="Zamknij">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+
+    <div id="contact-form-wrap">
+      <h3 class="text-navy text-[24px] sm:text-[28px] font-semibold leading-tight tracking-tight pr-6">
+        Zostaw <em class="accent">kontakt</em> — odezwę się w 24h
+      </h3>
+      <p class="text-text-muted text-sm mt-2">Wypełnij formularz, a Sebastian skontaktuje się z Tobą osobiście.</p>
+
+      <form id="contact-form" class="mt-6 space-y-3.5" novalidate>
+        <input required name="imie"     type="text"  placeholder="Imię i nazwisko" class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80" />
+        <input required name="telefon"  type="tel"   placeholder="Telefon"          class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80" />
+        <input required name="email"    type="email" placeholder="Email"            class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80" />
+        <select required name="temat" class="gold-select focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark">
+          <option value="" disabled selected>Wybierz temat</option>
+          <option>Sprzedaż nieruchomości</option>
+          <option>Zakup nieruchomości</option>
+          <option>Wynajem</option>
+          <option>Konsultacja / Inne</option>
+        </select>
+        <textarea required name="wiadomosc" rows="4" placeholder="Twoja wiadomość..." class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80 resize-none"></textarea>
+
+        <label class="flex items-start gap-3 text-xs text-text-muted leading-relaxed">
+          <input type="checkbox" required class="mt-0.5 accent-[#C9A961] w-4 h-4 shrink-0" />
+          <span>Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO w celu kontaktu zwrotnego.</span>
+        </label>
+
+        <button type="submit" class="press w-full bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-md px-6 py-3.5 mt-2 transition-colors">
+          Wyślij wiadomość
+        </button>
+      </form>
+    </div>
+
+    <div id="contact-success" class="hidden text-center py-4">
+      <div class="mx-auto w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center mb-5">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 class="text-navy text-[28px] font-semibold tracking-tight">Dziękuję!</h3>
+      <p class="text-text-muted text-sm mt-2 max-w-xs mx-auto">Skontaktuję się z Tobą w ciągu 24 godzin.</p>
+      <button id="contact-close-success" class="press mt-7 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-md px-8 py-3 transition-colors">Zamknij</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ───────── Sticky header solid-state on scroll ───────── */
+(function () {
+  const header = document.getElementById('site-header');
+  function update() {
+    if (window.scrollY > 40) {
+      header.classList.add('bg-navy', 'border-gold/15');
+      header.style.boxShadow = '0 6px 24px -10px rgba(0,0,0,0.45)';
+    } else {
+      header.classList.remove('bg-navy', 'border-gold/15');
+      header.style.boxShadow = '';
+    }
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+})();
+
+/* ───────── Mobile menu ───────── */
+(function () {
+  const menu  = document.getElementById('mobile-menu');
+  const open  = document.getElementById('hamburger');
+  const close = document.getElementById('hamburger-close');
+  function show(b) {
+    menu.style.opacity = b ? '1' : '0';
+    menu.style.pointerEvents = b ? 'auto' : 'none';
+    document.body.style.overflow = b ? 'hidden' : '';
+  }
+  open && open.addEventListener('click', () => show(true));
+  close && close.addEventListener('click', () => show(false));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => show(false)));
+  menu.querySelectorAll('[data-open-contact]').forEach(b => b.addEventListener('click', () => show(false)));
+})();
+
+/* ───────── Carousel ───────── */
+(function () {
+  function visibleCount(id) {
+    if (id === 'reviews') {
+      if (window.innerWidth >= 1024) return 2;
+      return 1;
+    }
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  }
+
+  function initCarousel(root) {
+    const id        = root.getAttribute('data-carousel');
+    const track     = root.querySelector('.carousel-track');
+    const cards     = Array.from(track.children);
+    const arrowsBox = document.querySelector(`[data-arrows="${id}"]`);
+    const dotsBox   = document.querySelector(`[data-dots="${id}"]`);
+    let index = 0;
+
+    function layout() {
+      const per   = visibleCount(id);
+      const gapPx = 20; // mr-5 = 1.25rem ≈ 20px
+      const totalGaps = (per - 1) * gapPx;
+      const cardW = (root.clientWidth - totalGaps) / per;
+      cards.forEach((c) => {
+        c.style.width = cardW + 'px';
+        c.style.marginRight = gapPx + 'px';
+      });
+      const slides = Math.max(1, cards.length - per + 1);
+      if (index > slides - 1) index = slides - 1;
+      // dots
+      if (dotsBox) {
+        dotsBox.innerHTML = '';
+        for (let i = 0; i < slides; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'h-2.5 rounded-full transition-all duration-200 ' + (i === index ? 'bg-gold w-6' : 'bg-navy/15 hover:bg-navy/30 w-2.5');
+          dot.setAttribute('aria-label', 'Slajd ' + (i + 1));
+          dot.addEventListener('click', () => { index = i; apply(); });
+          dotsBox.appendChild(dot);
+        }
+      }
+      apply();
+    }
+
+    function apply() {
+      const per   = visibleCount();
+      const gapPx = 20;
+      const cardW = (root.clientWidth - (per - 1) * gapPx) / per;
+      const offset = -index * (cardW + gapPx);
+      track.style.transform = `translateX(${offset}px)`;
+      if (dotsBox) {
+        Array.from(dotsBox.children).forEach((d, i) => {
+          d.className = 'h-2.5 rounded-full transition-all duration-200 ' + (i === index ? 'bg-gold w-6' : 'bg-navy/15 hover:bg-navy/30 w-2.5');
+        });
+      }
+    }
+
+    function nudge(dir) {
+      const per = visibleCount();
+      const slides = Math.max(1, cards.length - per + 1);
+      index = (index + dir + slides) % slides;
+      apply();
+    }
+
+    if (arrowsBox) {
+      arrowsBox.querySelectorAll('[data-dir]').forEach(btn => {
+        btn.addEventListener('click', () => nudge(parseInt(btn.getAttribute('data-dir'), 10)));
+      });
+    }
+
+    // Touch / pointer swipe support
+    let startX = null, deltaX = 0, dragging = false;
+    track.style.touchAction = 'pan-y';
+    function onDown(e) {
+      const p = e.touches ? e.touches[0] : e;
+      startX = p.clientX; deltaX = 0; dragging = true;
+      track.style.transition = 'none';
+    }
+    function onMove(e) {
+      if (!dragging) return;
+      const p = e.touches ? e.touches[0] : e;
+      deltaX = p.clientX - startX;
+      const per = visibleCount();
+      const gapPx = 20;
+      const cardW = (root.clientWidth - (per - 1) * gapPx) / per;
+      const offset = -index * (cardW + gapPx) + deltaX;
+      track.style.transform = `translateX(${offset}px)`;
+    }
+    function onUp() {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = '';
+      const threshold = root.clientWidth * 0.12;
+      if (deltaX > threshold) nudge(-1);
+      else if (deltaX < -threshold) nudge(1);
+      else apply();
+      startX = null; deltaX = 0;
+    }
+    root.addEventListener('touchstart', onDown, { passive: true });
+    root.addEventListener('touchmove',  onMove, { passive: true });
+    root.addEventListener('touchend',   onUp);
+    root.addEventListener('touchcancel',onUp);
+
+    window.addEventListener('resize', layout);
+    layout();
+  }
+
+  document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+})();
+
+/* ───────── Search form ───────── */
+document.getElementById('search-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(this).entries());
+  console.log('[search]', data);
+  alert('Funkcja wyszukiwania w przygotowaniu');
+});
+
+/* ───────── Contact modal ───────── */
+(function () {
+  const modal     = document.getElementById('contact-modal');
+  const formWrap  = document.getElementById('contact-form-wrap');
+  const success   = document.getElementById('contact-success');
+  const form      = document.getElementById('contact-form');
+  const closeBtn  = document.getElementById('contact-close');
+  const closeBtn2 = document.getElementById('contact-close-success');
+
+  function openModal(subject) {
+    formWrap.classList.remove('hidden');
+    success.classList.add('hidden');
+    form.reset();
+    if (subject) {
+      const sel = form.querySelector('[name="temat"]');
+      Array.from(sel.options).forEach(o => { if (o.value === subject || o.text === subject) sel.value = o.value || o.text; });
+    }
+    if (typeof modal.showModal === 'function') modal.showModal();
+    else modal.setAttribute('open', '');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    if (typeof modal.close === 'function') modal.close();
+    else modal.removeAttribute('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-contact]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(btn.getAttribute('data-subject'));
+    });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  closeBtn2.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    const box = modal.firstElementChild;
+    const r = box.getBoundingClientRect();
+    const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+    if (!inside) closeModal();
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // (no real backend) — show thank-you state
+    formWrap.classList.add('hidden');
+    success.classList.remove('hidden');
+  });
+})();
+</script>
+
+</body>
+</html>
