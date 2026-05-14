@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apartament z widokiem na Wawel · Kazimierz — Sebastian Monica</title>
+<meta name="description" content="Apartament 82 m², 3 pokoje, Kraków · Kazimierz. Widok na Wawel. Cena 1 850 000 zł. Oferta agenta Sebastian Monica — licencja PFRN nr 28574." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#0B1727',
+          'navy-deep': '#070F1B',
+          gold: '#C9A961',
+          'gold-soft': '#E0C387',
+          cream: '#F5F1EA',
+          'cream-warm': '#EDE6D8',
+          'text-dark': '#1A1A1A',
+          'text-muted': '#5A5A5A',
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        },
+        boxShadow: {
+          card: '0 10px 40px -12px rgba(11, 23, 39, 0.18)',
+          search: '0 24px 60px -20px rgba(11, 23, 39, 0.18)',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; background:#F5F1EA; color:#1A1A1A; }
+  .font-serif-i { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; }
+  em.accent { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: #C9A961; font-weight: 600; }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px;
+    background: #C9A961; transform: scaleX(0); transform-origin: left center;
+    transition: transform .35s ease;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+
+  .card-tint { border: 1px solid rgba(201,169,97,0.15); }
+  .card-tint:hover { border-color: rgba(201,169,97,0.35); }
+  .carousel-track { transition: transform .55s cubic-bezier(.22,.61,.36,1); }
+  .marker-slash { color: #C9A961; font-weight: 500; }
+
+  dialog.contact-modal { background: transparent; padding: 0; border: 0; }
+  dialog.contact-modal::backdrop { background: rgba(11,23,39,0.72); backdrop-filter: blur(6px); }
+
+  .focus-gold:focus { outline: none; box-shadow: 0 0 0 2px rgba(201,169,97,0.45); border-color: #C9A961; }
+
+  #mobile-menu { transition: opacity .25s ease; }
+  .press:active { transform: scale(0.985); }
+
+  header#site-header { transition: background-color .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  /* On detail page, nav is solid navy from load (page bg is cream) */
+  header#site-header.always-solid { background: #0B1727; border-bottom: 1px solid rgba(201,169,97,0.15); }
+
+  .section-pad { padding-top: 35px; padding-bottom: 35px; }
+  .pad-top { padding-top: 96px; }
+  @media (min-width: 1024px) { .pad-top { padding-top: 112px; } }
+
+  /* Gallery thumbnails */
+  .thumb { cursor: pointer; transition: opacity .2s ease, transform .2s ease; }
+  .thumb:hover { opacity: 0.85; }
+  .thumb.is-active { box-shadow: 0 0 0 2px #C9A961; }
+
+  /* Photo gallery tile hover */
+  .gallery-tile { cursor: zoom-in; overflow: hidden; }
+  .gallery-tile img { transition: transform .5s ease; }
+  .gallery-tile:hover img { transform: scale(1.04); }
+
+  /* Lightbox */
+  #lightbox { transition: opacity .25s ease; }
+  #lightbox.hidden { opacity: 0; pointer-events: none; }
+  #lightbox.shown  { opacity: 1; pointer-events: auto; }
+
+  /* Sticky agent card (desktop) */
+  @media (min-width: 1024px) {
+    .agent-sticky { position: sticky; top: 112px; }
+  }
+
+  /* Mobile sticky CTA bar */
+  #mobile-cta {
+    transition: transform .3s ease, opacity .3s ease;
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  #mobile-cta.shown {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  @media (min-width: 1024px) { #mobile-cta { display: none !important; } }
+
+  /* Hide scrollbars on body when lightbox open */
+  body.no-scroll { overflow: hidden; }
+
+  /* Feature pills overflow scroll on mobile */
+  .pills-row { scrollbar-width: none; }
+  .pills-row::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body class="bg-cream text-text-dark">
+
+<!-- ───────────────────────── TOP NAV ───────────────────────── -->
+<header id="site-header" class="always-solid fixed top-0 inset-x-0 z-40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
+    <a href="index.html#top" class="flex flex-col leading-tight">
+      <span class="text-white font-semibold tracking-[0.18em] text-[15px] lg:text-base">SEBASTIAN&nbsp;MONICA</span>
+      <span class="font-serif-i text-gold text-[12px] lg:text-[13px] mt-0.5">Agent nieruchomości</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9">
+      <a href="index.html#wynajem"  class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">Wynajem</a>
+      <a href="index.html#sprzedaz" class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">Sprzedaż</a>
+      <a href="index.html#zakup"    class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">Zakup</a>
+      <a href="index.html#o-mnie"   class="nav-link text-white text-[12.5px] tracking-[0.18em] font-medium uppercase">O&nbsp;mnie</a>
+      <button data-open-contact class="press inline-flex items-center gap-2 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-6 py-2.5 transition-colors">
+        Kontakt
+      </button>
+    </nav>
+
+    <button id="hamburger" class="lg:hidden text-gold p-2" aria-label="Otwórz menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-navy/95 backdrop-blur-sm opacity-0 pointer-events-none flex flex-col">
+  <div class="flex items-center justify-between px-5 h-16 border-b border-white/10">
+    <span class="text-white font-semibold tracking-[0.18em] text-[15px]">SEBASTIAN&nbsp;MONICA</span>
+    <button id="hamburger-close" class="text-gold p-2" aria-label="Zamknij menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="flex-1 flex flex-col items-center justify-center gap-7">
+    <a href="index.html#wynajem"  class="text-white text-lg tracking-[0.2em] uppercase font-medium">Wynajem</a>
+    <a href="index.html#sprzedaz" class="text-white text-lg tracking-[0.2em] uppercase font-medium">Sprzedaż</a>
+    <a href="index.html#zakup"    class="text-white text-lg tracking-[0.2em] uppercase font-medium">Zakup</a>
+    <a href="index.html#o-mnie"   class="text-white text-lg tracking-[0.2em] uppercase font-medium">O&nbsp;mnie</a>
+    <button data-open-contact class="mt-4 bg-gold text-white font-semibold tracking-[0.16em] text-sm uppercase rounded-full px-8 py-3">Kontakt</button>
+  </nav>
+</div>
+
+<main id="top" class="pad-top">
+
+<!-- ───────────────────────── BREADCRUMB ───────────────────────── -->
+<nav aria-label="Ścieżka" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-5 flex items-center gap-2 text-[12px] tracking-[0.16em] uppercase text-text-muted">
+    <a href="index.html" class="hover:text-gold transition-colors">Strona główna</a>
+    <span class="text-gold">/</span>
+    <a href="index.html#sprzedaz" class="hover:text-gold transition-colors">Oferty</a>
+    <span class="text-gold">/</span>
+    <span class="text-navy font-medium normal-case tracking-normal truncate max-w-[200px] sm:max-w-none">Apartament z widokiem na Wawel · Kazimierz</span>
+  </div>
+</nav>
+
+<!-- ───────────────────────── HERO GALLERY + HEADER ───────────────────────── -->
+<section class="bg-cream section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-12">
+
+    <!-- Left: gallery -->
+    <div class="lg:col-span-7">
+      <div id="main-image" class="aspect-[4/3] rounded-md overflow-hidden shadow-card bg-navy/5">
+        <img id="main-image-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" alt="Apartament z widokiem na Wawel — salon" class="w-full h-full object-cover" />
+      </div>
+      <!-- Thumbnails -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-3 mt-3 sm:mt-4">
+        <div class="thumb is-active aspect-[4/3] rounded overflow-hidden bg-navy/5" data-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=70" alt="Salon" class="w-full h-full object-cover" />
+        </div>
+        <div class="thumb aspect-[4/3] rounded overflow-hidden bg-navy/5" data-src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=70" alt="Sypialnia" class="w-full h-full object-cover" />
+        </div>
+        <div class="thumb aspect-[4/3] rounded overflow-hidden bg-navy/5" data-src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=80">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=400&q=70" alt="Kuchnia" class="w-full h-full object-cover" />
+        </div>
+        <div class="thumb aspect-[4/3] rounded overflow-hidden bg-navy/5" data-src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1400&q=80">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=400&q=70" alt="Łazienka" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: property header + agent card -->
+    <div class="lg:col-span-5">
+      <!-- Badges -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+        <span class="inline-block border border-navy/15 text-navy text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Mieszkanie</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-serif-i text-navy text-[34px] sm:text-[40px] lg:text-[44px] leading-[1.05] mt-5">
+        Apartament z widokiem na <span class="text-gold">Wawel</span>
+      </h1>
+
+      <!-- Location -->
+      <div class="flex items-center gap-2 mt-4 text-text-muted">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span class="text-[11px] tracking-[0.28em] font-medium uppercase">Kraków · Kazimierz</span>
+      </div>
+
+      <!-- Price -->
+      <div class="mt-6 pb-6 border-b border-cream-warm">
+        <p class="font-serif-i text-gold text-[42px] sm:text-[48px] leading-none">1 850 000 zł</p>
+        <p class="text-text-muted text-sm mt-2">22 560 zł/m²</p>
+      </div>
+
+      <!-- Specs grid -->
+      <ul class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6">
+        <li class="flex items-center gap-3 bg-white/60 rounded p-3 border border-cream-warm">
+          <span class="w-8 h-8 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></svg>
+          </span>
+          <div class="leading-tight">
+            <p class="text-[10px] tracking-[0.22em] font-medium uppercase text-text-muted">Typ</p>
+            <p class="text-navy text-sm font-semibold mt-0.5">Mieszkanie</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 bg-white/60 rounded p-3 border border-cream-warm">
+          <span class="w-8 h-8 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M3 9h18"/></svg>
+          </span>
+          <div class="leading-tight">
+            <p class="text-[10px] tracking-[0.22em] font-medium uppercase text-text-muted">Powierzchnia</p>
+            <p class="text-navy text-sm font-semibold mt-0.5">82 m²</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 bg-white/60 rounded p-3 border border-cream-warm">
+          <span class="w-8 h-8 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6"/><path d="M3 18h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
+          </span>
+          <div class="leading-tight">
+            <p class="text-[10px] tracking-[0.22em] font-medium uppercase text-text-muted">Pokoje</p>
+            <p class="text-navy text-sm font-semibold mt-0.5">3</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 bg-white/60 rounded p-3 border border-cream-warm">
+          <span class="w-8 h-8 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+          </span>
+          <div class="leading-tight">
+            <p class="text-[10px] tracking-[0.22em] font-medium uppercase text-text-muted">Rok budowy</p>
+            <p class="text-navy text-sm font-semibold mt-0.5">2014</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 bg-white/60 rounded p-3 border border-cream-warm">
+          <span class="w-8 h-8 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-7H6.5L5 17z"/><circle cx="8" cy="20" r="1.5"/><circle cx="16" cy="20" r="1.5"/></svg>
+          </span>
+          <div class="leading-tight">
+            <p class="text-[10px] tracking-[0.22em] font-medium uppercase text-text-muted">Parking</p>
+            <p class="text-navy text-sm font-semibold mt-0.5">1 miejsce</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 bg-white/60 rounded p-3 border border-cream-warm">
+          <span class="w-8 h-8 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4V14H4v6zM10 20h4V8h-4v12zM16 20h4V2h-4v18z"/></svg>
+          </span>
+          <div class="leading-tight">
+            <p class="text-[10px] tracking-[0.22em] font-medium uppercase text-text-muted">Piętro</p>
+            <p class="text-navy text-sm font-semibold mt-0.5">3 / 5</p>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Agent card -->
+      <div class="mt-6 bg-navy rounded-lg p-5 sm:p-6 text-white flex items-center gap-4 shadow-card">
+        <div class="w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full overflow-hidden bg-navy-deep shrink-0 border border-gold/30">
+          <img src="Sebastian-Monica-3.png" alt="Sebastian Monica" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-[11px] tracking-[0.24em] font-medium uppercase text-gold">Opiekun oferty</p>
+          <p class="font-semibold text-[16px] mt-0.5">Sebastian Monica</p>
+          <p class="font-serif-i text-gold-soft text-[14px]">Licencja PFRN 28574</p>
+        </div>
+        <button data-open-contact data-subject="Apartament z widokiem na Wawel · Kazimierz" class="press hidden sm:inline-flex shrink-0 items-center gap-2 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[11px] uppercase rounded-full px-5 py-2.5 transition-colors">
+          Skontaktuj się
+        </button>
+      </div>
+      <button data-open-contact data-subject="Apartament z widokiem na Wawel · Kazimierz" class="press sm:hidden mt-3 w-full bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[11px] uppercase rounded-full px-5 py-3 transition-colors">
+        Skontaktuj się
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───────────────────────── FEATURE PILLS ───────────────────────── -->
+<section class="bg-cream-warm/50 border-y border-cream-warm">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-5 overflow-x-auto pills-row">
+    <ul class="flex items-center gap-3 sm:gap-5 whitespace-nowrap text-[11px] tracking-[0.28em] font-medium uppercase">
+      <li class="text-gold">82 m²</li>
+      <li class="text-text-muted/40">/</li>
+      <li class="text-navy">3 pokoje</li>
+      <li class="text-text-muted/40">/</li>
+      <li class="text-navy">Kazimierz</li>
+      <li class="text-text-muted/40">/</li>
+      <li class="text-gold">Widok na Wawel</li>
+      <li class="text-text-muted/40">/</li>
+      <li class="text-navy">Wysoki standard</li>
+      <li class="text-text-muted/40">/</li>
+      <li class="text-navy">Balkon</li>
+      <li class="text-text-muted/40">/</li>
+      <li class="text-navy">Winda</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────────────────────── LONG CONTENT + STICKY AGENT ───────────────────────── -->
+<section class="bg-cream section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14">
+
+    <!-- Left: content -->
+    <div class="lg:col-span-8 space-y-12">
+
+      <!-- Opis -->
+      <div>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Opis</p>
+        <h2 class="text-navy text-[24px] lg:text-[30px] font-semibold tracking-tight leading-tight mb-5">
+          Apartament z <em class="accent">widokiem na Wawel</em> w sercu Kazimierza
+        </h2>
+        <div class="prose prose-navy text-text-muted text-[15px] leading-relaxed space-y-4 max-w-2xl">
+          <p>Apartament o powierzchni 82 m² położony w jednej z najbardziej cenionych krakowskich dzielnic — Kazimierzu. Z okien salonu rozciąga się otwarty widok na Wzgórze Wawelskie i Wisłę.</p>
+          <p>Mieszkanie w kameralnym, ceglanym budynku z 2014 roku, na trzecim piętrze (winda). Wysokość pomieszczeń 2,75 m, duże okna, parkiet dębowy w salonie i sypialniach.</p>
+          <p>Doskonała lokalizacja — 5 minut piechotą do Placu Bohaterów Getta i mostu Powstańców Śląskich, 10 minut do Rynku Głównego. Cicha uliczka, własne miejsce parkingowe w hali garażowej.</p>
+        </div>
+      </div>
+
+      <!-- Rozkład pomieszczeń -->
+      <div>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Rozkład pomieszczeń</p>
+        <h3 class="text-navy text-[20px] lg:text-[24px] font-semibold tracking-tight mb-5">Trzy pokoje, 82 m² użytkowej</h3>
+        <ul class="space-y-3 text-text-muted text-[15px] leading-relaxed max-w-2xl">
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span><strong class="text-navy font-medium">Salon z aneksem kuchennym</strong> · 32 m², otwarta przestrzeń z wyjściem na balkon, widok na Wawel</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span><strong class="text-navy font-medium">Sypialnia główna</strong> · 18 m², z garderobą i dostępem do łazienki</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span><strong class="text-navy font-medium">Sypialnia / gabinet</strong> · 12 m², okno na podwórzec</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span><strong class="text-navy font-medium">Łazienka główna</strong> · 8 m², wanna i prysznic</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span><strong class="text-navy font-medium">Toaleta gościnna</strong> · 3 m²</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span><strong class="text-navy font-medium">Przedpokój i pomieszczenie gospodarcze</strong> · 9 m²</span></li>
+        </ul>
+      </div>
+
+      <!-- Standard wykończenia -->
+      <div>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Standard wykończenia</p>
+        <h3 class="text-navy text-[20px] lg:text-[24px] font-semibold tracking-tight mb-5">Wysoki standard, gotowe do wprowadzenia</h3>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-text-muted text-[15px] leading-relaxed max-w-2xl">
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Parkiet dębowy w salonie i sypialniach</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Płytki gresowe, format 60×60 w kuchni i łazienkach</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Kuchnia na wymiar z AGD Miele/Bosch</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Ogrzewanie miejskie + klimatyzacja</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Okna trzyszybowe, rolety zewnętrzne</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Drzwi antywłamaniowe, alarm</span></li>
+        </ul>
+      </div>
+
+      <!-- Dodatkowe informacje -->
+      <div>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Dodatkowe informacje</p>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-text-muted text-[15px] leading-relaxed max-w-2xl">
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Czynsz administracyjny: ok. 480 zł/mies.</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Miejsce postojowe w hali garażowej w cenie</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Komórka lokatorska 4 m² w cenie</span></li>
+          <li class="flex items-start gap-3"><span class="text-gold mt-1">—</span><span>Księga wieczysta — bez obciążeń</span></li>
+        </ul>
+      </div>
+
+      <!-- Lokalizacja -->
+      <div>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Lokalizacja</p>
+        <h3 class="text-navy text-[20px] lg:text-[24px] font-semibold tracking-tight mb-5">Kazimierz — historyczne serce Krakowa</h3>
+        <p class="text-text-muted text-[15px] leading-relaxed max-w-2xl mb-6">
+          Mieszkanie położone w bezpośrednim sąsiedztwie Bulwarów Wiślanych. W zasięgu spaceru: Rynek Główny, Wawel, Plac Nowy, Synagoga Stara, sieć kawiarni, restauracji i sklepów. Doskonałe połączenie komunikacyjne — tramwaje, autobusy i ścieżki rowerowe.
+        </p>
+        <div class="aspect-[16/9] rounded-md overflow-hidden bg-navy/5 border border-cream-warm relative flex items-center justify-center">
+          <p class="text-text-muted text-sm font-serif-i italic">Mapa lokalizacji — Google Maps embed</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: sticky agent card (desktop only) -->
+    <aside class="hidden lg:block lg:col-span-4">
+      <div class="agent-sticky bg-navy rounded-lg p-7 text-white shadow-card">
+        <div class="flex items-center gap-4">
+          <div class="w-[72px] h-[72px] rounded-full overflow-hidden bg-navy-deep shrink-0 border border-gold/30">
+            <img src="Sebastian-Monica-3.png" alt="Sebastian Monica" class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="leading-tight">
+            <p class="text-[11px] tracking-[0.24em] font-medium uppercase text-gold">Opiekun oferty</p>
+            <p class="font-semibold text-[17px] mt-0.5">Sebastian Monica</p>
+            <p class="font-serif-i text-gold-soft text-[14px]">Agent · PFRN 28574</p>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-6 pt-6 space-y-3 text-sm">
+          <a href="tel:+48692841661" class="flex items-center gap-3 text-white hover:text-gold transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="font-medium tracking-wide">+48 692 841 661</span>
+          </a>
+          <a href="mailto:kontakt@sebastianmonica.pl" class="flex items-center gap-3 text-cream/85 hover:text-gold transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span>kontakt@sebastianmonica.pl</span>
+          </a>
+        </div>
+
+        <button data-open-contact data-subject="Apartament z widokiem na Wawel · Kazimierz" class="press w-full mt-6 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-6 py-3 transition-colors">
+          Zostaw kontakt
+        </button>
+
+        <p class="text-[11px] text-cream/55 leading-relaxed mt-5">
+          Odpowiem do 24 godzin. Bez zobowiązań — najpierw rozmowa, później dokumenty.
+        </p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ───────────────────────── PHOTO GALLERY ───────────────────────── -->
+<section class="bg-cream section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="flex items-end justify-between mb-8 lg:mb-10">
+      <div>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-3">Galeria</p>
+        <h2 class="text-navy text-[26px] lg:text-[36px] font-semibold tracking-tight">Zdjęcia <em class="accent">nieruchomości</em></h2>
+      </div>
+    </div>
+
+    <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      <!-- 8 tiles -->
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=70" alt="Salon" class="w-full h-full object-cover" />
+      </button>
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=70" alt="Sypialnia" class="w-full h-full object-cover" />
+      </button>
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=70" alt="Kuchnia" class="w-full h-full object-cover" />
+      </button>
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=600&q=70" alt="Łazienka" class="w-full h-full object-cover" />
+      </button>
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1565182999561-18d7dc61c393?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1565182999561-18d7dc61c393?auto=format&fit=crop&w=600&q=70" alt="Jadalnia" class="w-full h-full object-cover" />
+      </button>
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=70" alt="Elewacja" class="w-full h-full object-cover" />
+      </button>
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=600&q=70" alt="Widok" class="w-full h-full object-cover" />
+      </button>
+      <button class="gallery-tile aspect-[4/3] rounded-md bg-navy/5" data-full="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1800&q=85">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=70" alt="Balkon" class="w-full h-full object-cover" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── FLOOR PLAN ───────────────────────── -->
+<section class="bg-cream-warm/40 section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="mb-8">
+      <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-3">Rzut</p>
+      <h2 class="text-navy text-[26px] lg:text-[36px] font-semibold tracking-tight">Plan <em class="accent">nieruchomości</em></h2>
+    </div>
+    <div class="aspect-[16/10] rounded-md overflow-hidden bg-white border border-cream-warm flex items-center justify-center max-w-4xl mx-auto">
+      <div class="text-center">
+        <svg class="mx-auto mb-3 text-gold/60" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 12h18M12 3v18"/></svg>
+        <p class="text-text-muted font-serif-i italic text-base">Rzut do uzupełnienia</p>
+        <p class="text-text-muted/70 text-xs mt-1">Plik PDF/JPG zostanie podpięty po otrzymaniu od inwestora</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── CTA BANNER ───────────────────────── -->
+<section class="bg-navy text-white section-pad">
+  <div class="max-w-4xl mx-auto px-5 lg:px-10 text-center">
+    <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-4">Zainteresowała Cię ta oferta?</p>
+    <h2 class="text-white text-[28px] sm:text-[36px] lg:text-[42px] font-semibold tracking-tight leading-tight">
+      Zostaw <em class="accent">kontakt</em> — odezwę się w 24 godziny
+    </h2>
+    <p class="text-cream/80 text-[15px] leading-relaxed max-w-xl mx-auto mt-5">
+      Umów prezentację mieszkania, zapytaj o szczegóły lub poproś o pełną dokumentację. Bez zobowiązań.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+      <button data-open-contact data-subject="Apartament z widokiem na Wawel · Kazimierz" class="press inline-flex items-center gap-2 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-8 py-3.5 transition-colors">
+        Zostaw kontakt
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <a href="tel:+48692841661" class="press inline-flex items-center gap-2 bg-transparent border border-gold/50 text-gold hover:bg-gold hover:text-white hover:border-gold font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full px-7 py-3.5 transition-colors">
+        +48 692 841 661
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── PODOBNE OFERTY ───────────────────────── -->
+<section class="bg-cream section-pad">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="flex items-end justify-between mb-8 lg:mb-10">
+      <div>
+        <p class="text-[12px] tracking-[0.32em] font-medium uppercase text-gold mb-3">Może Cię też zainteresować</p>
+        <h2 class="text-navy text-[26px] lg:text-[36px] font-semibold tracking-tight">Podobne <em class="accent">oferty</em></h2>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Card 1 -->
+      <a href="oferta.html" class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] transition-colors">
+        <div>
+          <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+          <div class="flex items-center gap-2 mt-5 text-cream/85">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bielany</span>
+          </div>
+          <h3 class="font-serif-i text-[24px] text-white leading-snug mt-3">Dom z ogrodem nad <span class="text-gold">Wisłą</span></h3>
+          <p class="text-cream/70 text-sm mt-3">Dom · 230 m² · 5 pok.</p>
+        </div>
+        <div class="flex items-end justify-between mt-6">
+          <div>
+            <p class="text-gold text-[22px] font-semibold tracking-tight">1 380 000 zł</p>
+            <p class="text-cream/55 text-xs mt-1">6 000 zł/m²</p>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="oferta.html" class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] transition-colors">
+        <div>
+          <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+          <div class="flex items-center gap-2 mt-5 text-cream/85">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Bronowice</span>
+          </div>
+          <h3 class="font-serif-i text-[24px] text-white leading-snug mt-3">Penthouse z <span class="text-gold">tarasem</span></h3>
+          <p class="text-cream/70 text-sm mt-3">Apartament · 145 m² · 4 pok.</p>
+        </div>
+        <div class="flex items-end justify-between mt-6">
+          <div>
+            <p class="text-gold text-[22px] font-semibold tracking-tight">2 450 000 zł</p>
+            <p class="text-cream/55 text-xs mt-1">16 900 zł/m²</p>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="oferta.html" class="card-tint bg-navy-deep text-white rounded-lg p-6 lg:p-7 flex flex-col justify-between min-h-[260px] transition-colors">
+        <div>
+          <span class="inline-block bg-gold text-white text-[10px] tracking-[0.22em] font-semibold uppercase px-3 py-1 rounded">Na sprzedaż</span>
+          <div class="flex items-center gap-2 mt-5 text-cream/85">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2"><path d="M12 22s-7-7.16-7-12a7 7 0 1 1 14 0c0 4.84-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span class="text-[10.5px] tracking-[0.26em] uppercase font-medium">Kraków, Podgórze</span>
+          </div>
+          <h3 class="font-serif-i text-[24px] text-white leading-snug mt-3">Loft postindustrialny <span class="text-gold">Fabryczna</span></h3>
+          <p class="text-cream/70 text-sm mt-3">Mieszkanie · 120 m² · 3 pok.</p>
+        </div>
+        <div class="flex items-end justify-between mt-6">
+          <div>
+            <p class="text-gold text-[22px] font-semibold tracking-tight">1 980 000 zł</p>
+            <p class="text-cream/55 text-xs mt-1">16 500 zł/m²</p>
+          </div>
+          <span class="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<footer class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-10 lg:py-16 grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-10">
+    <div class="md:col-span-6 lg:col-span-5">
+      <div class="flex items-center gap-3 mt-1">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-white/30 text-white hover:border-gold hover:text-gold transition-colors flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.5-2 2-2h2V2h-3c-3 0-5 1.8-5 5v3H6v4h3v8h4z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-white/30 text-white hover:border-gold hover:text-gold transition-colors flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/30 text-white hover:border-gold hover:text-gold transition-colors flex items-center justify-center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zM4 9h4v11H4zM10 9h4v1.7c.7-1 1.9-2 3.7-2 3 0 4.3 2 4.3 5V20h-4v-5.5c0-1.7-.6-2.5-2-2.5s-2 .9-2 2.5V20h-4V9z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:col-span-2 lg:col-span-2">
+      <p class="text-gold text-[11px] tracking-[0.28em] font-medium uppercase mb-5">Nawigacja</p>
+      <ul class="space-y-3 text-white/85 text-sm">
+        <li><a href="index.html#wynajem"  class="hover:text-gold transition-colors">Wynajem</a></li>
+        <li><a href="index.html#sprzedaz" class="hover:text-gold transition-colors">Sprzedaż</a></li>
+        <li><a href="index.html#zakup"    class="hover:text-gold transition-colors">Zakup</a></li>
+        <li><a href="index.html#o-mnie"   class="hover:text-gold transition-colors">O mnie</a></li>
+        <li><button data-open-contact class="hover:text-gold transition-colors">Kontakt</button></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-2 lg:col-span-2">
+      <p class="text-gold text-[11px] tracking-[0.28em] font-medium uppercase mb-5">Lokalizacje</p>
+      <ul class="space-y-3 text-white/85 text-sm">
+        <li>Stare Miasto</li>
+        <li>Kazimierz</li>
+        <li>Podgórze</li>
+        <li>Bronowice</li>
+        <li>Zwierzyniec</li>
+        <li>Krowodrza</li>
+        <li>Okolice Krakowa</li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-2 lg:col-span-3">
+      <p class="text-gold text-[11px] tracking-[0.28em] font-medium uppercase mb-5">Kontakt</p>
+      <ul class="space-y-3 text-sm">
+        <li><a href="tel:+48692841661" class="text-gold hover:text-gold-soft font-medium">+48 692 841 661</a></li>
+        <li><a href="mailto:kontakt@sebastianmonica.pl" class="text-white/85 hover:text-gold transition-colors">kontakt@sebastianmonica.pl</a></li>
+        <li class="text-white/85 leading-relaxed">ul. [placeholder]<br/>31-000 Kraków</li>
+        <li class="text-white/55 text-xs pt-2">Licencja PFRN nr 28574</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-gold/15">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-white/60">
+      <p>© 2026 Sebastian Monica · Wszelkie prawa zastrzeżone</p>
+      <p class="flex flex-wrap gap-x-5 gap-y-1">
+        <a href="#" class="hover:text-gold transition-colors">Polityka prywatności</a>
+        <span>Realizacja: [placeholder]</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ───────────────────────── MOBILE STICKY CTA BAR ───────────────────────── -->
+<div id="mobile-cta" class="fixed bottom-0 inset-x-0 z-30 bg-navy/95 backdrop-blur-sm border-t border-gold/20 px-4 py-3 flex items-center gap-3">
+  <a href="tel:+48692841661" class="shrink-0 w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center" aria-label="Zadzwoń">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+  <button data-open-contact data-subject="Apartament z widokiem na Wawel · Kazimierz" class="press flex-1 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-full py-3 transition-colors">
+    Zostaw kontakt
+  </button>
+</div>
+
+<!-- ───────────────────────── LIGHTBOX ───────────────────────── -->
+<div id="lightbox" class="hidden fixed inset-0 z-[60] bg-navy/95 backdrop-blur-md flex items-center justify-center p-4">
+  <button id="lightbox-close" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Zamknij">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Poprzednie">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Następne">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[88vh] rounded shadow-2xl" />
+</div>
+
+<!-- ───────────────────────── CONTACT MODAL ───────────────────────── -->
+<dialog id="contact-modal" class="contact-modal max-w-[92vw]">
+  <div class="bg-cream rounded-lg shadow-2xl border border-gold-soft/60 p-7 sm:p-10 w-[520px] max-w-full relative">
+    <button id="contact-close" class="absolute top-4 right-4 text-navy hover:text-gold transition-colors p-1.5" aria-label="Zamknij">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+
+    <div id="contact-form-wrap">
+      <h3 class="text-navy text-[24px] sm:text-[28px] font-semibold leading-tight tracking-tight pr-6">
+        Zostaw <em class="accent">kontakt</em> — odezwę się w 24h
+      </h3>
+      <p id="contact-subject-label" class="text-text-muted text-sm mt-2">Wypełnij formularz, a Sebastian skontaktuje się z Tobą osobiście.</p>
+
+      <form id="contact-form" class="mt-6 space-y-3.5" novalidate>
+        <input required name="imie"     type="text"  placeholder="Imię i nazwisko" class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80" />
+        <input required name="telefon"  type="tel"   placeholder="Telefon"          class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80" />
+        <input required name="email"    type="email" placeholder="Email"            class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80" />
+        <input id="contact-subject" name="temat" type="text" placeholder="Temat" class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80" />
+        <textarea required name="wiadomosc" rows="4" placeholder="Twoja wiadomość..." class="focus-gold w-full bg-white border border-cream-warm rounded-md px-4 py-3 text-sm text-text-dark placeholder:text-text-muted/80 resize-none"></textarea>
+
+        <label class="flex items-start gap-3 text-xs text-text-muted leading-relaxed">
+          <input type="checkbox" required class="mt-0.5 accent-[#C9A961] w-4 h-4 shrink-0" />
+          <span>Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO w celu kontaktu zwrotnego.</span>
+        </label>
+
+        <button type="submit" class="press w-full bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-md px-6 py-3.5 mt-2 transition-colors">
+          Wyślij wiadomość
+        </button>
+      </form>
+    </div>
+
+    <div id="contact-success" class="hidden text-center py-4">
+      <div class="mx-auto w-16 h-16 rounded-full border-2 border-gold flex items-center justify-center mb-5">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9A961" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 class="text-navy text-[28px] font-semibold tracking-tight">Dziękuję!</h3>
+      <p class="text-text-muted text-sm mt-2 max-w-xs mx-auto">Skontaktuję się z Tobą w ciągu 24 godzin.</p>
+      <button id="contact-close-success" class="press mt-7 bg-gold hover:bg-gold-soft text-white font-semibold tracking-[0.16em] text-[12px] uppercase rounded-md px-8 py-3 transition-colors">Zamknij</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ───────── Mobile menu ───────── */
+(function () {
+  const menu  = document.getElementById('mobile-menu');
+  const open  = document.getElementById('hamburger');
+  const close = document.getElementById('hamburger-close');
+  function show(b) {
+    menu.style.opacity = b ? '1' : '0';
+    menu.style.pointerEvents = b ? 'auto' : 'none';
+    document.body.style.overflow = b ? 'hidden' : '';
+  }
+  open && open.addEventListener('click', () => show(true));
+  close && close.addEventListener('click', () => show(false));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => show(false)));
+  menu.querySelectorAll('[data-open-contact]').forEach(b => b.addEventListener('click', () => show(false)));
+})();
+
+/* ───────── Thumbnail swap ───────── */
+(function () {
+  const main = document.getElementById('main-image-img');
+  const thumbs = document.querySelectorAll('.thumb');
+  thumbs.forEach(t => {
+    t.addEventListener('click', () => {
+      const src = t.getAttribute('data-src');
+      if (!src) return;
+      main.src = src;
+      thumbs.forEach(x => x.classList.remove('is-active'));
+      t.classList.add('is-active');
+    });
+  });
+})();
+
+/* ───────── Lightbox ───────── */
+(function () {
+  const lb     = document.getElementById('lightbox');
+  const img    = document.getElementById('lightbox-img');
+  const tiles  = Array.from(document.querySelectorAll('.gallery-tile'));
+  const closeB = document.getElementById('lightbox-close');
+  const prevB  = document.getElementById('lightbox-prev');
+  const nextB  = document.getElementById('lightbox-next');
+  let idx = 0;
+
+  function open(i) {
+    idx = i;
+    img.src = tiles[idx].getAttribute('data-full');
+    lb.classList.remove('hidden');
+    lb.classList.add('shown');
+    document.body.classList.add('no-scroll');
+  }
+  function close() {
+    lb.classList.add('hidden');
+    lb.classList.remove('shown');
+    document.body.classList.remove('no-scroll');
+    img.src = '';
+  }
+  function nudge(d) {
+    idx = (idx + d + tiles.length) % tiles.length;
+    img.src = tiles[idx].getAttribute('data-full');
+  }
+
+  tiles.forEach((t, i) => t.addEventListener('click', () => open(i)));
+  closeB.addEventListener('click', close);
+  prevB.addEventListener('click', () => nudge(-1));
+  nextB.addEventListener('click', () => nudge(1));
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (lb.classList.contains('hidden')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') nudge(-1);
+    if (e.key === 'ArrowRight') nudge(1);
+  });
+})();
+
+/* ───────── Mobile sticky CTA — show after scrolling past hero ───────── */
+(function () {
+  const bar = document.getElementById('mobile-cta');
+  const sentinel = document.querySelector('[data-open-contact][data-subject]'); // first one is inside agent card
+  if (!sentinel) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting && e.boundingClientRect.top < 0) {
+        bar.classList.add('shown');
+      } else {
+        bar.classList.remove('shown');
+      }
+    });
+  }, { threshold: 0 });
+  io.observe(sentinel);
+})();
+
+/* ───────── Contact modal ───────── */
+(function () {
+  const modal     = document.getElementById('contact-modal');
+  const formWrap  = document.getElementById('contact-form-wrap');
+  const success   = document.getElementById('contact-success');
+  const form      = document.getElementById('contact-form');
+  const subjectIn = document.getElementById('contact-subject');
+  const closeBtn  = document.getElementById('contact-close');
+  const closeBtn2 = document.getElementById('contact-close-success');
+
+  function openModal(subject) {
+    formWrap.classList.remove('hidden');
+    success.classList.add('hidden');
+    form.reset();
+    if (subject) subjectIn.value = subject;
+    if (typeof modal.showModal === 'function') modal.showModal();
+    else modal.setAttribute('open', '');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    if (typeof modal.close === 'function') modal.close();
+    else modal.removeAttribute('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-open-contact]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(btn.getAttribute('data-subject'));
+    });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  closeBtn2.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    const box = modal.firstElementChild;
+    const r = box.getBoundingClientRect();
+    const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+    if (!inside) closeModal();
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formWrap.classList.add('hidden');
+    success.classList.remove('hidden');
+  });
+})();
+</script>
+
+</body>
+</html>
